@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Safe Cookies
-Plugin URI: http://subhransusekhar.com/
+Plugin URI: https://github.com/subhransusekhar/safe-cookies
 Description: Tries to create a more secure cookie with random vatiable to avoid reuse of cookies
 Version: 1.0
 Author: Subhransu Sekhar
