@@ -9,6 +9,9 @@ Author URI: http://subhransusekhar.com/
 */
 if ( !function_exists('wp_generate_auth_cookie') ) :
 function wp_generate_auth_cookie($user_id, $expiration, $scheme = 'auth') {
+		if ( is_ssl() ) {
+			$scheme = 'secure_auth';
+		}
 		$user = get_userdata($user_id);
 		$key = '_rand_auth_key';
 		$single = true;
@@ -29,6 +32,9 @@ endif;
 
 if ( !function_exists('wp_validate_auth_cookie') ) :
 function wp_validate_auth_cookie($cookie = '', $scheme = 'auth') {
+		if ( is_ssl() ) {
+			$scheme = 'secure_auth';
+		}
 		if ( empty($cookie) ) {
 			switch ($scheme){
 				case 'auth':
